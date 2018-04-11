@@ -25,4 +25,19 @@ function largestSum(arr){
     // write code to find the sum of the largest sub-sequence in arr
 }
 
-console.log("ans",largestSum([31,-41,59,26,-53,58,97,-93,-23,84]));
+function newLargeSum(arr){
+    let ans = 0;
+    let temp = 0;
+    for(let i=0; i<arr.length; i++){
+        temp += arr[i]
+        if(temp < 0){
+            temp = 0;
+        }
+        if(temp > ans){
+          ans = temp;
+        }       
+    }
+    return ans;
+}
+
+console.log("ans",newLargeSum([31,-41,59,26,-53,58,97,-93,-23,84]));
